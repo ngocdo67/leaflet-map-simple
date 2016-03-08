@@ -66,7 +66,7 @@
       controlLayers.addOverlay(geoJsonLayer, 'Lunch (blue markers)');
     });
     // custom icons for hospitals
-    $.getJSON("points-hospital.geojson", function (data){
+    /*$.getJSON("points-hospital.geojson", function (data){
       var iconStyle = L.icon({
         iconUrl: "hospital-18.png",
         iconRetinaUrl: 'hospital-18@2x.png',
@@ -80,12 +80,12 @@
         }
       }); // insert ".addTo(map)" to display layer by default
       controlLayers.addOverlay(geoJsonLayer, 'Hospitals');
-    });
+    });*/
     /* POLYGON OVERLAYS */
     // Ways to load geoJSON polygon layers from local directory or remote server
     // Different options for styling and interactivity
     // load polygon data with clickable features from local directory
-    $.getJSON("polygons-towns.geojson", function (data) {   // insert pathname to your local directory file
+    /*$.getJSON("polygons-towns.geojson", function (data) {   // insert pathname to your local directory file
       var geoJsonLayer = L.geoJson(data, {
         style: function (feature) {
           return {
@@ -100,9 +100,9 @@
         }
       }).addTo(map);  // insert ".addTo(map)" to display layer by default
       controlLayers.addOverlay(geoJsonLayer, 'CT Towns (red polygons)');  // insert your 'Title' to add to legend
-    });
+    });*/
     // load polygon geojson, using data to define fillColor, from local directory
-    $.getJSON("polygons-towns.geojson", function (data) {   // insert pathname to your local directory file
+   /* $.getJSON("polygons-towns.geojson", function (data) {   // insert pathname to your local directory file
       var geoJsonLayer = L.geoJson(data, {
         style: function (feature) {
           var fillColor,
@@ -127,7 +127,7 @@
         }
       });  // insert ".addTo(map)" to display layer by default
       controlLayers.addOverlay(geoJsonLayer, 'CT Pop 2010 (filled polygons)');  // insert your 'Title' to add to legend
-    });
+    });*/
     $.getJSON("cwp-37-region.geojson", function (data) {   // insert pathname to your local directory file
       var geoJsonLayer = L.geoJson(data, {
         style: function (feature) {
@@ -145,8 +145,8 @@
              + "<br>Adult Served: " + "<br>" + feature.properties.adult;
           layer.bindPopup(popupText);
         }
-      });  // insert ".addTo(map)" to display layer by default
-      controlLayers.addOverlay(geoJsonLayer, 'CT Pop 2010 (filled polygons)');  // insert your 'Title' to add to legend
+      }).addTo(map);  // insert ".addTo(map)" to display layer by default
+      controlLayers.addOverlay(geoJsonLayer, 'CWP Info (filled polygons)');  // insert your 'Title' to add to legend
     });
     </script>
   </body>
