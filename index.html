@@ -119,15 +119,6 @@
     $.getJSON("polygons-towns.geojson", function (data) {   // insert pathname to your local directory file
       var geoJsonLayer = L.geoJson(data, {
         style: function (feature) {
-          var fillColor,
-            population = feature.properties.Pop2010;
-          if (population > 100000) fillColor = "#006837";
-          else if (population > 50000) fillColor ="#31a354";
-          else if (population > 15000) fillColor ="#78c679";
-          else if (population > 5000) fillColor ="#c2e699";
-          else if (population > 0) fillColor ="#ffffcc";
-          else fillColor = "#f7f7f7"; // no data
-          return {
             'color': 'red',
             'weight': 2,
             'fillColor': fillColor, // sorts by method above
